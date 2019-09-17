@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function addNumbers(){
+                var result=confirm("Do you want to continue?");
+            
+                if (result==true){
+                var number1=parseInt(prompt("Enter the first number"));
+                var number2=parseInt(prompt("Enter the second number"));
+                alert(`${number1} + ${number2} =${number1+number2}`)
+                }
+                else{
+                alert("STOP")
+                }
+            }
+            function displayMessage(){
+                var d=new Date();
+                if(d.getHours()<12){
+                    alert("Good Morning");
+                }
+                else if(d.getHours()<18){
+                    alert("Good Afternoon");
+                }
+                else{
+                    alert("Good Evening")
+                }
+            }
+            function roomTemperature(temp){
+                temp=20
+                return temp;
+            }
+            function displayTempStatus(){
+                var t=roomTemperature();
+                if(t>25){
+                    alert("HOT");
+                }   
+                else{
+                    alert("COLD");
+                }
+            }
+            function stringFunction(){
+                var str='prembalaji';
+                alert(`Your name is \"${str}\"`)
+                alert(str.length);
+                alert(str.toLowerCase());
+                alert(str.toUpperCase());
+                alert(str.indexOf("e"));
+                alert(str.substring(4,8));
+                alert(str.substr(4,8));
+                alert(str.charAt(9));
+                alert(str.slice(4,8));
+            }
+            function formInitial(){
+                var firstName=prompt("Enter The First Name");
+                var lastName=prompt("Enter the Last Name");
+                alert("Welcome "+firstName.charAt(0)+lastName.charAt(0));
+            }
+            function generateNumber(){
+                alert(Math.floor(Math.random(0,9)*10));
+            }
+            function remainingDays(){
+                var today=new Date();
+                var lastdate=new Date();
+                lastdate.setFullYear(2019,08,30);
+                if(lastdate>today){
+                    var days=1000*60*60*24;
+                    daysleft=(lastdate-today)/days;
+                    alert("Application is live for "+daysleft+"days");
+                }
+                else{
+                    alert("Time UP!!!");
+                }
+            }
+            function getEbBill(){
+                var billnumber=prompt("Enter The Bill Number");
+                var billamount=parseInt(prompt("Enter the Bill Amount"));
+                var today=new Date();
+                today=today.getDate();
+                if(today<15){
+                    alert("The Bill Amount is "+billamount);
+                }
+                else{
+                    Daysleft=(today-15);
+                    billamount=(billamount+(50*Daysleft));
+                    alert("The Bill Amount is "+billamount);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="AddNumbers" onclick="addNumbers()">
+        <input type="button" value="DisplayMessage" onclick="displayMessage()">
+        <input type="button" value="RoomTemperature1" onclick="roomTemperature(23)">
+        <input type="button" value="RoomTemperature2" onclick="roomTemperature(34)">
+        <input type="button" value="displayTempStatus" onclick="displayTempStatus()">
+        <input type="button" value="StringFunction" onclick="stringFunction()">
+        <input type="button" value="FormInitial" onclick="formInitial()">
+        <input type="button" value="GenerateNumber" onclick="generateNumber()">
+        <input type="button" value="RemainingDays" onclick="remainingDays()">
+        <input type="button" value="ElectricityBill" onclick="getEbBill()">
+    </body>
+</html>

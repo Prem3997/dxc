@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function check(){
+                var uname=document.getElementById("username").value;
+                var pwd=document.getElementById("password").value;
+                if(uname.length==0){
+                    var span1=document.getElementById("s1");
+                    span1.innerHTML="<font color=red>Please Enter your Username</font>";
+                }
+                if(pwd.length==0){
+                    var span2=document.getElementByID("s2");
+                    span2.innerHTML="<font color=red>Please Enter your Password</font>";
+                }
+                else{
+                    alert(`Welcome ${uname}`);
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            Username:<input type="text" name="username" id="username"><span id="s1"></span>
+            <br>
+            Password:<input type="password" name="password" id="password"><span id="s2"></span>
+            <br>
+            <input type="button" value="go" onclick="check()">
+        </form>
+    </body>
+</html>

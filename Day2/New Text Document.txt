@@ -1,0 +1,11 @@
+	<html>
+<head>
+	<title>Welcome to Dxc</title>
+</head>
+<body bgcolor="Red" text="Blue">
+	<!-- This is Demo code -->
+	<h1>Hello World</h1>
+	DXC<br/> Demo Code
+	<font color="green" face="comic sans ms">Bangalore</font>
+</body>
+</html>
