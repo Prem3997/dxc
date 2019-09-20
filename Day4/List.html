@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function check(p, q, checkoutList) {
+            len = q.options.length;
+            op = new Option(p.value, p.value)
+            q.options[len] = op
+        }
+        function doCheckout(guestList, checkoutList) {
+            i = guestList.options.selectedIndex;
+            var guestText = guestList.options[i];
+            console.log("Selected Guest Name is :" + guestText.value);
+
+            //code is for adding the checkout name 
+            len = checkoutList.options.length;
+            op = new Option(guestText.value, guestText.value)
+            checkoutList.options[len] = op
+
+            //code to delete the selected guest from guestList
+            
+        }
+    </script>
+</head>
+<form>
+    Guest Name : <input type="text" onblur="
+            check(this,this.form.guestList,this.form.checkoutList)">
+
+    <select name="guestList">
+        <option>---Select Guest --</option>
+    </select>
+
+    <input type="button" value="Checkout" onclick="doCheckout(this.form.guestList,this.form.checkoutList)">
+
+    <select name="checkoutList">
+        <option>--CheckOutList--</option>
+    </select>
+
+</form>
+
+
+</html>

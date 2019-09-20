@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <style type=text/css>
+            .label{
+                color:blue;
+            }
+            .text{
+                color:red;
+            }
+            .label2{
+                color:blue;
+                
+            }
+            p.a{
+                border-style: solid;
+                border-width: 10 12 10 12;
+                border-radius: 40px 40px 60px 60px;
+                border-color:red;
+                width:70px;
+                text-align:center;
+            }
+            @font-face {
+                font-family: myCustomFont;
+                src: url("After_Shok.ttf");
+            }
+            h1{
+                font-family: myCustomFont;
+            }
+            .shawdow{
+                text-shadow: 0px -15px 0 blue;
+                text-align: center;
+                box-shadow: 40px 40px 80px 80px red;
+                
+            }
+            .inshawdow{
+                text-shadow: 0px -15px 0 blue;
+                text-align: center;
+                box-shadow:inset 40px 40px 40px 40px red;
+                
+            }
+            .transformx{
+                transform: rotateX(190deg);
+            }
+            .transformy{
+                transform: rotateY(190deg);
+            }
+            .transform{
+                transform: rotate(180deg);
+            }
+            .translate{
+                transform:translate(20px,20px);
+            }
+            .skewx{
+                transform:skew(300deg);
+            }
+            .skewy{
+                transform:skew(120deg);
+            }
+            .transformz{
+                transform: rotateZ(180deg);
+            }
+            div{
+                width:100px;
+                height:75px;
+                background-color: pink;
+                border: 1px solid black;
+                transition: width 5s
+
+            }
+            div:hover{
+                width:300px;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <h1>ICICI Bank</h1>
+        <div>
+            <h1 class="label">Custome Name:<span class="text">Prem</span></h1>  
+        </div>
+        <div>
+            <h1 class="label">Customer Address:
+            <h1 class="label2">Permanent:<span class="text">Chennai</span></h1>
+            <p class="a">Prem Balaji</p>
+            <h1 class="shawdow">PREM<h1>
+            <h1 class="inshawdow">Balaji</h1>
+            <h1>Prem Balaji</h1>
+            <h1 class="transform">Prem Balaji Rotate</h1>
+            <h1 class="transformx">Prem Balaji RX</h1>
+            <h1 class="transformy">Prem Balaji RY</h1>
+            <h1 class="translate">Prem Balaji</h1>
+            <h1 class="transformz">Prem Balaji RZ</h1>
+            <h1 class="skewx">Prem Balaji SX</h1>
+            <h1 class="skewy">Prem Balaji SY</h1>
+
+        </div>
+    </body>
+</html>

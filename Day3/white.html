@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <title>Welcome to DXC- Registration Form</title>
+    <script type="text/javascript">
+        function check() {
+            var errUserName = document.getElementById("errUserName")
+            var errPassword = document.getElementById("errPassword")
+            var errConfirmPassword = document.getElementById("errConfirmPassword")
+            var errFullName = document.getElementById("errFullName")
+
+            errUserName.innerHTML = ""
+            errPassword.innerHTML = ""
+            errConfirmPassword.innerHTML = ""
+            errFullName.innerHTML = ""
+
+            with (document.forms[0]) {
+                if (username.value == "") {
+                    errUserName.innerHTML = "<font color=blue>Please enter username</font>"
+                    return false
+                }
+                if (password.value == "") {
+                    errPassword.innerHTML = "<font color=blue>Please enter password</font>"
+                    return false
+                }
+                if (confirmPassword.value == "") {
+                    errConfirmPassword.innerHTML = "<font color=blue>Please enter confirm password</font>"
+                    return false
+                }
+                if (fullName.value == "") {
+                    errFullName.innerHTML = "<font color=blue>Please enter full name</font>"
+                    return false
+                }
+                if(qualification.value=="---"){
+                  alert("Please select Qualification")
+                  return false
+                }
+                var a=false
+                for(var i=0;i<alertBy.length;i++){
+                  if(alertBy[i].checked==true)
+                  a=true;
+                  break;
+
+                }
+                if(a==false){
+                  alert("Please select at least one alert method")
+                  return false;
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body bgcolor="pink" text="red">
+    <h2>
+        <center>Registration Form</center>
+    </h2>
+    <form action="success.html" onsubmit="return check()">
+        <table cellspacing="10" cellpadding="10" align="center">
+            <tr>
+                <td>User Name *</td>
+                <td><input type="text" name="username" id="username" /></td>
+                <td><span id="errUserName"></span></td>
+            </tr>
+            <tr>
+                <td>Password *</td>
+                <td><input type="password" name="password" id="password" /></td>
+                <td><span id="errPassword"></span></td>
+            </tr>
+            <tr>
+                <td> Confirm Password *</td>
+                <td><input type="password" name="confirmPassword" id="confirmPassword" /></td>
+                <td><span id="errConfirmPassword"></span></td>
+            </tr>
+            <tr>
+                <td>Full Name *</td>
+                <td><input type="text" name="fullName" id="fullName" /></td>
+                <td><span id="errFullName"></span></td>
+            </tr>
+            <tr>
+                <td>Gender </td>
+                <td>
+                    <input type="radio" name="gender" id="gender" value="male" />Male
+                    <input type="radio" name="gender" id="gender" value="female" checked />Female
+                    <input type="radio" name="gender" id="gender" value="others" />Others
+                </td>
+            </tr>
+            <tr>
+            <tr>
+                <td>Qualification *</td>
+                <td>
+                    <select name="qualification" id="qualification" onchange="check()">
+                        <option value="---">Select Option</option>
+                        <option value="MCA">MCA</option>
+                        <option value="MBA">MBA</option>
+                        <option value="MTech">MTech</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Alert By : * </td>
+                <td>
+                    <input type="checkbox" name="alertBy" id="alertBy" value="mobile" />Mobile
+                    <input type="checkbox" name="alertBy" id="alertBy" value="email" />Email
+                    <input type="checkbox" name="alertBy" id="alertBy" value="letters" />Letters
+                </td>
+            </tr>
+
+            <tr>
+            <tr>
+                <td align="center">
+                    <input type="submit" value="Register"></td>
+                <td align="center">
+                    <input type="reset" value="Clear"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

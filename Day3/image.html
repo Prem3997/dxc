@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script type=text/javascript>
+            function changeImage(index,image){
+                document.images[0].src="dxc.jpg"
+                document.images[1].src="dxc.jpg"
+                document.images[2].src="dxc.jpg"
+                document.images[index].src=image
+                
+            }
+        </script>
+
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><img src=dxc.jpg height=250 width=250></td>
+                <td><img src=dxc.jpg height=250 width=250></td>
+                <td><img src=dxc.jpg height=250 width=250></td>
+            </tr>
+            <tr>
+                <td><input type="button" name="apple" value="apple" onclick="changeImage(0,'1.jpg')"></td>
+                <td><input type="button" name="ball" value="ball" onclick="changeImage(1,'2.jpg')"></td>    
+                <td><input type="button" name="apple" value="cat" onclick="changeImage(2,'3.jpg')"></td>    
+            </tr>
+        </table>
+    </body>
+</html>

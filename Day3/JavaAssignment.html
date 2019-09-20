@@ -1,0 +1,53 @@
+<html>
+<head>
+    <script type="text/javascript">
+    function validation()
+    {
+    var uname= document.getElementById("username").value
+    var span1=document.getElementById("s1")
+    var pass=document.getElementById("password").value
+    var span2=document.getElementById("s2")
+    if (uname.length==0){
+        span1.innerHTML="<font color=red>Please enter valid username</font>"
+        return false
+    }  
+    else{ 
+        if (pass.length==0){
+        span2.innerHTML="<font color=red>Password can't be blank</font>"
+        return false
+        }
+        else {
+            if (pass.length<6 || pass.length>12){
+                span2.innerHTML="<font color=red>Password should be 6 to 12 characters</font>"
+                return false
+            }
+            if (pass.charAt(0)!="A"){
+                span2.innerHTML="<font color=red>First letter of password should be A</font>"
+                return false
+            }
+                
+        }
+    }
+    }
+    </script>
+    <script type="text/javascript" src=phonenumber.js>
+    </script>
+</head>
+
+    <body>
+        <h2><center>Login Form</center></h2>
+        <form action="successreg.html" onsubmit="return validation()">
+                    User Name: <input type="text" name="username" id="username"/>
+                    <span id="s1"></span>
+                    <br/><pre></pre>
+                    Password :<input type="password" name="password" id="password"/>
+                    <span id="s2"></span>
+                    <br/><pre></pre>
+                    Phone Number:<input type="text" name="phonenumber" id="phonenumber">
+                    <br/><pre></pre>
+                    <input type="submit" value="Login">
+                    <input type="submit" value="Go" onclick="alert('Go Button is clicked ')">
+                    <input type="reset" value="Clear">
+        </form>
+    </body>
+</html>
