@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <style =text/css>
+            body {
+            padding:100px;
+            }
+            .ball {
+            animation-name: rolling;
+            animation-duration: 5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 5000;
+            animation-delay:2s;
+            animation-direction: alternate;
+            }
+            @keyframes rolling {
+            0% {transform: translateX(0) rotate(0deg);}
+            20% {transform: translateX(300px) rotate(50deg);}
+            40% {transform: translateX(0) rotate(90deg);}
+            70% {transform: translateX(800px) rotate(180deg);} 
+            100% {transform: translateX(0) rotate(0deg);} 
+            }
+        </style>
+
+    </head>
+    <body>
+        <div>
+            <img class="ball" src="ball.jpg"width="111" height="111" />
+        </div>
+    </body>
+</html>

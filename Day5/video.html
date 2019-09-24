@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style type="text/css">
+            .body{
+                text-align: center;
+            }
+        </style>
+        <script type="text/javascript">
+            
+            function playpause(){
+                myVideo=document.getElementById("avengerVideo");
+                if(myVideo.paused)
+                    myVideo.play();
+                else
+                    myVideo.pause();
+            }
+            function makemax(){
+                
+                myVideo.width=960;
+            }
+            function makemin(){
+                
+                myVideo.width=320;
+            }
+            function makenormal(){
+                
+                myVideo.width=640;
+            }
+        </script>
+
+    </head>
+    <body class="body">
+       
+        <input type="button" name="playpause" id="playpause" value="Play/Pause" onclick="playpause()">
+        <input type="button" name="max" id="max" value="Max" onclick="makemax()">
+        <input type="button" name="min" id="min" value="Min" onclick="makemin()">
+        <input type="button" name="normal" id="normal" value="Normal" onclick="makenormal()"><br><br>
+        <video controls height="340" width="640" poster="in.png" id="avengerVideo">
+            <source src="avengerVideo.mp4" type="video/mp4">
+        </video>
+
+    </body>
+</html>
