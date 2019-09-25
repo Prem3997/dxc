@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function one(outer_arg){
+                function two(inner_arg){
+                    return outer_arg+inner_arg;
+                }
+                return two;
+            }
+            var a=one(5);
+            console.log(a(3));
+            console.dir(a);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

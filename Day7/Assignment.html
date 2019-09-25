@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var text_max = 30;
+                $('#textFeedback').html(text_max + ' characters remaining');
+                $('#textBox').keyup(function() {
+                    var text_length = $('#textBox').val().length;
+                    var text_remaining = text_max - text_length;
+                    $('#textFeedback').html(text_remaining + ' characters remaining');
+                });
+                $('#submit').prop('disabled',true);
+                $('#textBox').on('input change',function(){
+                    $('#submit').prop('disabled',false);
+                })
+            });
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <div>Enter UserName: <input type="text" id="textBox" name="textBox"><span id="textFeedback"></span></div><br>
+            <div>Enter Password:<input type="password" id="password" name="password"></div>
+            <div><input type="submit"value="Submit"id="submit"></div>
+        </form>
+    </body>
+</html>

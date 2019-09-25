@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <script>
+        function display() {
+            myD = document.getElementById("myDiv");
+            console.log("Outer HTML :"+ myD.outerHTML);
+            console.log("Inner HTML :"+ myD.innerHTML);
+            console.log("Text Content :"+myD.textContent);
+           
+        }
+
+    </script>
+</head>
+
+<body>
+        <div id="myDiv"><p>Tufail</p><p>Ahmed Khan</p></div>
+        <button onclick="display()">Check Console</button>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <meta charset="utf-8" http-equiv="refresh" content="10"
+        <script src="jquery.js"></script>
+        <link rel="stylesheet"href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("button#toggle").click(function(){
+                    $("h1").toggle();
+                })
+                $("button#prompt").click(function(){
+                    alert("Promt is clicked");
+                })
+                $("p,h1,h2").click(function(){
+                    if (window.getSelection){
+                        window.getSelection().removeAllRanges();
+                    }
+                    else if (document.selection){
+                        document.selection.empty();
+                    }
+                    alert("You cannot Select")
+                })
+                $('body').bind('cut copy paste',function(e){
+                    alert("You cannot cut copy paste");
+                    e.preventDefault();
+                })
+                $("body").on("contextmenu",function(e){
+                    alert("You cannot Right Click");
+                    e.preventDefault();
+                })
+                $("input").blur(function(){
+                    $(this).css("background-color",'red');
+                })
+                $("input").focus(function(){
+                    $(this).css("background-color",'green');
+                })
+                $("#customerDetails").click(function(){
+                    $("#customerData").slideToggle("fast");
+                })
+                var atags=["C","C++","Java","Python","SQL"]
+                $("#tags").autocomplete({
+                    source: atags
+                })
+                $("#date").datepicker()
+                $("#draggable").draggable()
+                $("#names").sortable()
+            })    
+        </script>
+        <style type="text/css">
+            #customerDetails,#customerData{
+                padding:5px;
+                text-align: center;
+                background-color: blue;
+                border: solid 1px black;
+            }
+            #customerData{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Hi </h1>
+        <button id="toggle">Hide / Unhide</button>
+        <button id="prompt">Prompt</button>
+        <h1>Click Me to Hide</h1>
+        <h2>Click Me to Hide</h2>
+        <p>Click Me to Hide</p>
+        Name:<input type="text" name="fullName"><br>
+        Email:<input type="text" name="email">
+        <div id="customerDetails">Customer Details</div>
+        <div id="customerData">
+            <ul id="names">
+                <li>Prem</li>
+                <li>Balaji</li>
+                <li>Roshan</li>
+                <li>Thomas</li>
+            </ul>
+        </div>
+        <div class="ui-widget">
+            Languages Known:<input id="tags">
+        </div>
+        <p id="draggable">Date: <input type="text" id="date" class="ui-widdget"></p>
+    </body>
+</html>
