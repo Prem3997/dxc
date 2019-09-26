@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <script src="jquery.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript">
+            function validation()
+            {
+            var uname= document.getElementById("userName").value
+            var divUname=document.getElementById("nameDiv")
+            var email=document.getElementById("email").value
+            var divEmail=document.getElementById("emailDiv")
+            divUname.innerHTML="";
+            divEmail.innerHTML="";
+            if (uname.length==0){
+                divUname.innerHTML="<font color=red>Name is required</font><br>"
+                }
+            if (email.indexOf("@")==-1){
+                divEmail.innerHTML="<font color=red>Email is required</font><br>"
+                }
+            }
+            function addTable(){
+                var name = $("#userName").val();
+                var email = $("#email").val();
+                var tableValue = "<tr><td>" + name + "</td><td><font color=blue> " + email + "</td></tr>";
+                $("table tbody").append(tableValue);
+                }
+            </script>  
+            <style>
+                table{
+                    width: 100%;
+                    margin: 20px 0;
+                    }
+                    table, th, td{
+                        border: 1px solid black;
+                    }
+                    table th, table td{
+                        padding: 5px;
+                        text-align: left;
+                    }
+            </style>      
+    </head>
+    <body>
+        <form class="form-group">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-3">
+                        Name<input type="text" class="form-control" id="userName" name="userName" placeholder="Enter Your Name" onblur="validation()"><br>
+                    <div id="nameDiv"></div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-3">
+                        Email<input type="text" class="form-control" id="email" name="email" placeholder="Enter Your Email" onblur="validation()"><br>
+                    <div id="emailDiv"></div>
+                    <input type="button" class="btn btn-info" id="submitBtn" onclick="addTable()" value="Submit">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>    
+    </body>
+</html>
+

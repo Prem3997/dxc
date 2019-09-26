@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        function check(){
+            var span1=document.getElementById("s1")
+            var span2=document.getElementById("s2")
+            var span3=document.getElementById("s3")
+            span1.innerHTML=""
+            span2.innerHTML=""
+            span3.innerHTML=""
+            with(document.forms[0]){
+                if(userName.value=="" &&  spouseName.value=="")
+                {
+                    span1.innerHTML="Name should not be empty"
+                }
+                else{
+                    span1.innerHTML= (userName.value)
+                }
+                if(document.getElementById("gender1").checked==true)
+                {
+                    span2.innerHTML="Your gender is"+" " +(document.getElementById("gender1").value)
+                }
+                else if(document.getElementById("gender2").checked==true)
+                {
+                    span2.innerHTML="Your gender is"+" " +(document.getElementById("gender2").value)
+                }
+                else{
+                    span2.innerHTML="Please Select Gender"
+                }
+                if(document.getElementById("comment1").checked==true)
+                {
+                    span3.innerHTML="Your comment is"+" " + (document.getElementById("comment1").value)
+                }
+                else if(document.getElementById("comment2").checked==true)
+                {
+                    span3.innerHTML="Your comment is"+" " + (document.getElementById("comment2").value)
+                }
+                else{
+                    span3.innerHTML="Please Select Comment"
+                }
+            }
+        }
+        </script>
+    </head>
+    <body bgcolor="pink">
+        <h1 align="center" ><font color="blue" >UserForm</font></h1>
+        <form>
+        <table border="10px" align="center">
+            <tr>
+                <td>User Name:</td>
+                <td><input type="text" id="userName" name="userName" onblur="check()"></td>
+            </tr>
+            <tr>
+                <td>Spouse Name:</td>
+                <td><input type="text" id="spouseName" name="spouseName" onblur="check()"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td ><input type="radio" id="gender1" name="gender" value="male" onclick="check()" >Male<br>
+                <input type="radio" id="gender2" name="gender" value="female" onclick="check()">female</td>
+                </tr>
+                <tr>
+                        <td>Do you like it?:</td>
+                        <td onselect="check()"><input type="radio" id="comment1" name="comment" value="Yes" onclick="check()" >Yes<br>
+                        <input type="radio" id="comment2" name="comment" value="No" onclick="check()" >No</td>
+                            
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="button" id="submit" name="submit" value="Submit"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><span id="s1"></span></td>
+                </tr>
+                <tr>
+                        <td colspan="2" align="center"><span id="s2"></span></td>
+                    </tr>
+                    <tr>
+                            <td colspan="2" align="center"><span id="s3"></span></td>
+                        </tr>
+        </form>
+        </table>
+    </body>
+</html> 
