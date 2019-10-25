@@ -1,0 +1,10 @@
+<h1>Displaying Product</h1>
+<h2>ProductId: <%=datapId%></h2>
+<h2>OrderId: <%=dataoId%></h2>
+<h2>Customer Details</h2>
+<h3><%=customerData.name%></h3>
+<h3><%=customerData.address%></h3>
+<h3><%customerData.mobile.forEach(function(item){%>
+    <li><%=item%></li>
+<%})%>
+</h3>

@@ -1,0 +1,10 @@
+div#todo-table{
+    border: 1px solid;
+    padding: 25px;
+}
+li{
+    padding: 10px;
+}
+h1{
+    background-color:red;
+}
