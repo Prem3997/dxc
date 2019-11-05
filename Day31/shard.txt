@@ -1,0 +1,22 @@
+create folder shard1
+	shard1/rs0
+	shard1/rs1
+	shard1/rs2
+
+Open three command prompt and execute the three commands
+
+mongod --replSet s1 --logpath "s1-r0.log" --dbpath data\shard1\rs0 --port 47017 --shardsvr
+mongod --replSet s1 --logpath "s1-r1.log" --dbpath data\shard1\rs1 --port 47018 --shardsvr
+mongod --replSet s1 --logpath "s1-r2.log" --dbpath data\shard1\rs2 --port 47019 --shardsvr
+
+========
+start another command prompt :
+
+1) mongo --port 47017 
+
+2) config = { _id: "s1", members:[
+          { _id : 0, host : "localhost:47017" },
+          { _id : 1, host : "localhost:47018" },
+          { _id : 2, host : "localhost:47019" }]};
+
+3) rs.initiate(config)

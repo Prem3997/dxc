@@ -1,0 +1,52 @@
+db.mybulkData5.insert([
+{
+    "name": "Hammad",
+    "salary": "78000",
+    "dob": "2013-11-16"
+},
+{
+    "name": "Arhaan",
+    "salary": "98000",
+    "dob": "2017-08-05"
+}
+]
+)
+
+
+==========================
+Solution :
+
+db.mybulkData.find({
+    "salary": { "$exists": true, "$type": 2 },
+    "dob": { "$exists": true, "$type": 2 }
+}).forEach(function(doc)
+{ 
+    var newSalary = parseInt(doc.salary),
+        newDob = new ISODate(doc.dob);        
+    db.mybulkData.updateOne(
+        { "_id": doc._id },
+        { "$set": { "salary": newSalary, "dob": newDob } }
+    );
+});
+
+
+=========================with bulk
+var bulk = db.mybulkData5.initializeUnorderedBulkOp(),
+    counter = 0; // counter to keep track of the batch update size
+
+db.mybulkData5.find({
+    "salary": { "$exists": true, "$type": 2 },
+    "dob": { "$exists": true, "$type": 2 }
+}).forEach(function(doc){ 
+    var newSalary = parseInt(doc.salary),
+        newDob = new ISODate(doc.dob);
+    bulk.find({ "_id": doc._id }).updateOne({ 
+        "$set": { "salary": newSalary, "dob": newDob }
+    });
+
+    counter++; // increment counter
+    if (counter % 10 == 0) {
+        bulk.execute(); // Execute per 1000 operations and re-initialize every 1000 update statements
+        bulk = db.mybulkData10.initializeUnorderedBulkOp();
+    }
+});

@@ -1,0 +1,22 @@
+C:\Users\Tufail>mongod --port 9876 --dbpath="C:\Users\pbalaji5\dxc\DemoMongo\Data"
+
+C:\Users\Tufail>mongo --port 9876
+
+use admin
+
+db.custDetails2.insert({_id:1,name :"Arushi Mishra",emailID:"arushi395@gmail.com",mobileNumber:8176976902})
+
+
+db.custDetails.find();
+
+mongod --auth --port 9876 --dbpath="C:\Users\pbalaji5\dxc\DemoMongo\Data"
+
+
+mongo --port 9876 -u "tufail" -p "ahmed"
+
+
+
+
+
+
+db.createUser({ user: "tufail", pwd: "ahmed", roles: [{ role: "userAdminAnyDatabase", db: "admin" }] })
