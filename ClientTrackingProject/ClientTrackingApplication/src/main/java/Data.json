@@ -1,0 +1,17 @@
+	{
+	    "clientId": "1001",
+	    "clientCompanyName": "Prem",
+	    "clientName": "PREM",
+	    "location": "cHENNAI",
+		"mobileNumber": "948974089",
+	    "emailAddress": "PREM@DXC"
+	},
+		{
+	    "projectId": "10001",
+	    "projectName": "Machinelearning",
+	    "chapterToWhichBelongs": "Analytics",
+	    "projectManger": "PREM",
+		"projectVersion": "2.3.4.2",
+	    "projectStatus": "PROGRESS"
+	}
+	
